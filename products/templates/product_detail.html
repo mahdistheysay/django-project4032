@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+
+{% block contents %}
+<div class="container">
+    <div class="row">
+
+            <div class="card" style="width: 18rem;">
+                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.title }}" height="250px">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text">{{ product.price }}</p>
+                </div>
+            </div>
+
+
+
+    </div>
+</div>
+
+{% endblock %}

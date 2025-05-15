@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block contents %}
+
+<h1>Products list</h1>
+
+<div class="container">
+    <div class="row">
+        {% for product in products_list %}
+        <div class="col-md-3">
+
+            <div class="card" style="width: 18rem;">
+                <img src="{{ product.image.url }}" class="card-img-top" alt="{{product.title}}" height="250px">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.title}}</h5>
+                    <p class="card-text">{{ product.description | truncatewords:15}}</p>
+                    <a href="/products-fb/{{ product.id }}" class="btn btn-primary">Show</a>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+    <br>
+
+{% for product in object_list %}
+    <h3>{{ product.title }}</h3>
+{% endfor %}
+
+{% endblock %}
+
+
+
+
+
